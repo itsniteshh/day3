@@ -23,20 +23,28 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 print("Welcome to Treasure Island.")
 print("Your mission is to find the treasure.") 
 
-direction = input("which direction you want to go? left or right:  ")
-move = input("do you want to move ahead or wait? ")
-gate = input("which door would you like to take? red, blue or yellow: ")
+print("You started your journey and reached an isolated island. You explore the island and reach junction.")
+direction = input("\nwhich direction you want to go? left or right:  ").lower()
 
 if direction == "left":
+  print("congratulations! you have successfully reached level 2 of the island game! Let's move ahead\nYou see a vast water body in front of you... \n")
+
+  move = input("do you want to move ahead or wait? ").lower()
   if move == "wait":
-    if gate == "yellow":
-      print("Hurrah! You win the game")
-  else:
-    print("You were attacked by sharks! Game Over")
+    print("Your're something else aren't you! Congrats on completion of level 2 arcade. \nLets move on to the final level of the game.. \n")
     
-    if gate == "red":
+    gate = input("which door would you like to take? red, blue or yellow: ").lower()
+    if gate == "yellow":
+      print("Hurrah! Champion. You win the game")
+    
+    elif gate == "red":
       print("You fell into a room of fire! Game Over")
-    else:
+    elif gate == "blue":
       print("You were eaten by beasts! Game Over")
-else:
+  else:
+      print("You were attacked by sharks! Game Over")
+
+elif direction == "right":
   print("opps! you fell into a hole. Game Over")
+else:
+  print("You're disqualified")
